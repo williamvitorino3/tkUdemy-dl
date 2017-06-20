@@ -56,8 +56,7 @@ class Janela(object):
 
     def baixar(self):
         u"""Realiza a operação de Download."""
-        print("Baixando...")
-        system("youtube-dl -u {0} -p {1} {2}".format(self.username_entry.get(),
-                                                     self.password_entry.get(),
-                                                     self.link_entry.get()))
-        print("Download completo.")
+        comando = "youtube-dl --no-warnings --ignore-errors -u {0} -p {1} {2}"
+        system(comando.format(self.username_entry.get(),
+                              self.password_entry.get(),
+                              self.link_entry.get()))
